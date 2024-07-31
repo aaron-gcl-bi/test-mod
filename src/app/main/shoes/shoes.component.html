@@ -4,7 +4,7 @@
         <img [src]="shoe.imageUrl" class="w-full h-48 object-cover mx-auto rounded-t-lg" alt="{{shoe.name}}">
         <div class="p-4">
           <h2 class="text-xl font-semibold text-gray-800 mb-2 text-center">{{shoe.name}}</h2>
-          <p class="text-lg text-white text-center mb-4">\${{shoe.price}}</p>
+          <!-- <p class="text-lg text-white text-center mb-4">\${{shoe.price}}</p> -->
           <a [routerLink]="['/details', shoe.id]" class="text-blue-500 hover:text-blue-700 text-center block">Learn More &gt;</a>
         </div>
       </div>
