@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ShoeListings } from '../../../../shoe-listings';
+import { ShoeListings } from '../../services/shoe-listings';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ShoesService } from '../../../../shoes.service';
-import { WishlistService } from '../../../../wishlist.service';
-import { AuthenticationService } from '../../../../authentication.service';
+import { ShoesService } from '../../services/shoes.service';
+import { WishlistService } from '../../services/wishlist.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-details',

@@ -5,7 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { AddComponent } from './add/add.component';
-import { AuthenticationGuardService } from '../../../authentication.guard.service';
+import { AuthenticationGuardService } from '../services/authentication.guard.service';
 import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
 import { WishlistComponent } from './wishlist/wishlist.component';

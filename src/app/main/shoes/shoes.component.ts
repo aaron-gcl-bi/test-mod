@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ShoeListings } from '../../../../shoe-listings';
-import { ShoesService } from '../../../../shoes.service';
+import { ShoeListings } from '../../services/shoe-listings';
+import { ShoesService } from '../../services/shoes.service';
 
 @Component({
   selector: 'app-shoes',

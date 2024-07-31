@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ShoesService } from '../../../../shoes.service';
-import { ShoeListings } from '../../../../shoe-listings';
+import { ShoesService } from '../../services/shoes.service';
+import { ShoeListings } from '../../services/shoe-listings';
 
 @Component({
   selector: 'app-add',
