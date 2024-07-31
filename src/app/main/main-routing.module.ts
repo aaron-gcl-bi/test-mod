@@ -17,7 +17,6 @@ export const routes: Routes = [
   { path: 'home', component:HomeComponent},
   { path: 'details/:id', component:DetailsComponent},
   { path: 'add', component:AddComponent, canActivate:[AuthenticationGuardService]},
-  { path: 'login', component:LoginComponent},
   { path: 'wishlist', component:WishlistComponent, canActivate:[AuthenticationGuardService]}
 ];
 
