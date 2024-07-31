@@ -1,0 +1,20 @@
+<div class="navbar-container p-4 bg-gray-900 text-white rounded-lg">
+    <nav class="flex flex-row space-x-6">
+      <a routerLink="/home" class="navbar-link font-bold text-lg">HOME</a>
+      <a routerLink="/shoes" class="navbar-link font-bold text-lg">SHOES</a>
+      <a routerLink="/about" class="navbar-link font-bold text-lg">ABOUT</a>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+  
+  <style>
+    .navbar-link {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+  
+    .navbar-link:hover {
+      color: #60a5fa; /* Tailwind blue-400 */
+      transform: translateY(-2px);
+    }
+  </style>
+  

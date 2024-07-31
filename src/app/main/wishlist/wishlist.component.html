@@ -1,0 +1,15 @@
+<div class="wishlist-container max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <h2 class="text-3xl font-bold mb-6 text-center text-red-600">Your Wishlist</h2>
+    <div *ngIf="wishlist.length > 0; else noItems" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let shoe of wishlist" class="wishlist-item bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <img [src]="shoe.imageUrl" alt="{{shoe.name}}" class="w-full h-48 object-cover rounded-t-lg mb-4">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ shoe.name }}</h3>
+        <p class="text-lg text-gray-600 mb-4">Price: ${{ shoe.price }}</p>
+        <button (click)="removeFromWishlist(shoe)" class="bg-red-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-red-600 transition duration-200">Remove</button>
+      </div>
+    </div>
+    <ng-template #noItems>
+      <p class="text-center text-gray-500">Your wishlist is empty.</p>
+    </ng-template>
+  </div>
+  

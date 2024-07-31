@@ -1,0 +1,16 @@
+<div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 mt-6">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label for="username" class="block text-gray-700">Username</label>
+        <input id="username" formControlName="username" type="text" class="border text-gray-700 p-2 rounded-md w-full" />
+      </div>
+      <div>
+        <label for="password" class="block text-gray-700">Password</label>
+        <input id="password" formControlName="password" type="password" class="border text-gray-700 p-2 rounded-md w-full" />
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md" [disabled]="loginForm.invalid">Login</button>
+      <div *ngIf="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</div>
+    </form>
+  </div>
+  

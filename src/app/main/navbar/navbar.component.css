@@ -1,0 +1,9 @@
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+nav a {
+    text-decoration: none; /* Optional: Remove underline */
+    color: #ffffff; /* Optional: Change text color */
+}

@@ -1,0 +1,70 @@
+<div class="max-w-lg mx-auto bg-white shadow-xl rounded-lg mt-10">
+    <!-- <p class="text-lg mb-4 text-center text-gray-800">This is my About Page!</p>
+    <p class="text-lg mb-6 text-center text-gray-600">Fill out my test form.</p> -->
+  
+    <h3 class="text-2xl font-semibold mb-6 text-gray-800 text-center p-3">Form</h3>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <!-- Name Field -->
+      <div class="flex flex-col">
+        <label for="name" class="text-gray-700 font-medium mb-1">Name:</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div
+          *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          Name is required.
+        </div>
+      </div>
+  
+      <!-- Phone Number Field -->
+      <div class="flex flex-col">
+        <label for="number" class="text-gray-700 font-medium mb-1">Phone Number:</label>
+        <input
+          type="text"
+          id="number"
+          formControlName="number"
+          class="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div
+          *ngIf="contactForm.get('number')?.invalid && contactForm.get('number')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          Valid phone number is required.
+        </div>
+      </div>
+  
+      <!-- Address Field -->
+      <div class="flex flex-col">
+        <label for="address" class="text-gray-700 font-medium mb-1">Address:</label>
+        <input
+          type="text"
+          id="address"
+          formControlName="address"
+          class="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div
+          *ngIf="contactForm.get('address')?.invalid && contactForm.get('address')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          Address is required.
+        </div>
+      </div>
+  
+      <button
+        type="submit"
+        [disabled]="contactForm.invalid"
+        class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        Submit
+      </button>
+  
+      <p class="text-green-500 mt-4 text-center">{{submissionResult}}</p>
+    </form>
+  </div>
+  

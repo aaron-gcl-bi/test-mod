@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black;
+    color: white; /* Optional: to ensure text is readable on a black background */
+    margin: 0; /* Optional: to remove default margin */
+    padding: 0; /* Optional: to remove default padding */
+    height: 100vh; /* Optional: to ensure the body takes the full viewport height */
+  }
+
+

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from '../../../../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  logoUrl: string = 'assets/logo.png';
+  isAuthenticated : boolean =false;
 
+  constructor(private authenticationService: AuthenticationService,
+    public router:Router
+  ) {}
+
+  ngOnInit():void{
+    this.authenticationService.isLoggedIn().subscribe(status=>{
+      this.isAuthenticated = status;
+    })
+  }
+
+  logout():void{
+    this.authenticationService.logout();
+  }
 }
