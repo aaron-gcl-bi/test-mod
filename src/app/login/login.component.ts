@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   loginForm: FormGroup;
   errorMessage: string | null=null;
+  previousUrl: string ='/';
 
-  constructor(private fb: FormBuilder,private authenticationService: AuthenticationService, private router:Router){
+  constructor(private fb: FormBuilder,
+    private authenticationService: AuthenticationService, 
+    private router:Router, 
+    private navigationService: NavigationService){
     this.loginForm = this.fb.group({
       username: ['',Validators.required],
       password: ['',Validators.required],
@@ -31,5 +36,12 @@ export class LoginComponent {
         }
       });
     }
+  }
+  ngOnInit(): void {
+    this.previousUrl = this.navigationService.getPreviousUrl();
+  }
+
+  closeForm(): void {
+    this.router.navigateByUrl(this.previousUrl)  // Adjust the route as needed
   }
 }

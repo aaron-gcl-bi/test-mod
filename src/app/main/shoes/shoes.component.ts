@@ -14,5 +14,6 @@ export class ShoesComponent {
   constructor(){
     this.shoes = this.shoesService.getAllShoeListings();
   }
+  
 
 }
