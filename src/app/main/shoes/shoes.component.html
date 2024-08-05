@@ -1,17 +1,25 @@
-<div class="flex flex-col items-center min-h-screen bg-black p-10">
-    <div class="flex flex-wrap gap-10 justify-center">
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden w-60 sm:w-80 md:w-96 mb-4 p-4 transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300" *ngFor="let shoe of shoes">
-        <img [src]="shoe.imageUrl" class="w-full h-48 object-cover mx-auto rounded-t-lg" alt="{{shoe.name}}">
-        <div class="p-4">
-          <h2 class="text-xl font-semibold text-gray-800 mb-2 text-center">{{shoe.name}}</h2>
-          <!-- <p class="text-lg text-white text-center mb-4">\${{shoe.price}}</p> -->
-          <a [routerLink]="['/details', shoe.id]" class="text-blue-500 hover:text-blue-700 text-center block">Learn More &gt;</a>
-        </div>
+<div class="relative flex flex-col items-center min-h-screen bg-black p-10">
+
+
+  <div class="flex flex-wrap gap-10 justify-center">
+    <div
+      class="bg-white shadow-lg rounded-lg overflow-hidden w-60 sm:w-80 md:w-96 mb-4 p-4 transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300"
+      *ngFor="let shoe of shoes"
+    >
+      <img [src]="shoe.imageUrl" class="w-full h-48 object-cover mx-auto rounded-t-lg" alt="{{shoe.name}}">
+      <div class="p-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2 text-center">{{shoe.name}}</h2>
+        <a [routerLink]="['/details', shoe.id]" class="text-blue-500 hover:text-blue-700 text-center block">Learn More &gt;</a>
       </div>
     </div>
-    <div class="mt-7">
-      <a [routerLink]="['/add']" class="bg-blue-500 text-white shadow-lg rounded-lg w-60 sm:w-80 md:w-96 mb-4 p-4 text-center transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300">Add More</a>
-    </div>
   </div>
+
+  <div class="mt-7">
+    <a [routerLink]="['/add']" class="bg-blue-500 text-white shadow-lg rounded-lg w-60 sm:w-80 md:w-96 mb-4 p-4 text-center transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300">
+      Add More
+    </a>
+  </div>
+</div>
+
   
   

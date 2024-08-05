@@ -4,6 +4,7 @@ import { ShoesService } from '../../services/shoes.service';
 import { ShoeListings } from '../../services/shoe-listings';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../services/navigation.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add',
@@ -16,7 +17,12 @@ export class AddComponent {
   newShoeDetails: any;
   previousUrl: string = '/';
 
-  constructor(private fb: FormBuilder, private shoeService: ShoesService, private router:Router, private navigationService: NavigationService) {
+  constructor(
+    private fb: FormBuilder, 
+    private shoeService: ShoesService, 
+    private router:Router, 
+    private navigationService: NavigationService,
+    private location: Location) {
     this.newShoeForm = this.fb.group({
       name: ['', Validators.required],
       price: ['', Validators.required],
@@ -52,6 +58,6 @@ export class AddComponent {
   }
 
   closeForm(): void {
-    this.router.navigateByUrl(this.previousUrl);  
+    this.location.back();
   }
 }
