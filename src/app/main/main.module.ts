@@ -12,6 +12,8 @@ import { AddComponent } from './add/add.component';
 import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ContactService } from '../services/contact.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,12 +33,13 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     MainRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-    LoginModule
+    LoginModule,
   ],
   exports:[
     HeaderComponent,
     HomeComponent,
     ShoesComponent
-  ]
+  ],
+  providers:[ContactService]
 })
 export class MainModule { }
