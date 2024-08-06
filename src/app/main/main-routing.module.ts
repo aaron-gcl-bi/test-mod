@@ -9,6 +9,7 @@ import { AuthenticationGuardService } from '../services/authentication.guard.ser
 import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { SignupComponent } from '../login/signup/signup.component';
 
 export const routes: Routes = [
   { path: '',redirectTo: 'home',pathMatch:'full'},
@@ -17,7 +18,8 @@ export const routes: Routes = [
   { path: 'home', component:HomeComponent},
   { path: 'details/:id', component:DetailsComponent},
   { path: 'add', component:AddComponent, canActivate:[AuthenticationGuardService]},
-  { path: 'wishlist', component:WishlistComponent, canActivate:[AuthenticationGuardService]}
+  { path: 'wishlist', component:WishlistComponent, canActivate:[AuthenticationGuardService]},
+  { path: 'signup', component:SignupComponent}
 ];
 
 @NgModule({

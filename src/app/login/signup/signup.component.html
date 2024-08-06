@@ -1,0 +1,29 @@
+<div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 mt-6 relative">
+    <!-- Close Button -->
+    <button (click)="closeForm()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+      &times;
+    </button>
+    
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700">Sign Up</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label for="username" class="block text-gray-700">Username</label>
+        <input id="username" formControlName="username" type="text" class="border text-gray-700 p-2 rounded-md w-full" />
+      </div>
+      <!-- <div>
+        <label for="email" class="block text-gray-700">Email</label>
+        <input id="email" formControlName="email" type="email" class="border text-gray-700 p-2 rounded-md w-full" />
+      </div> -->
+      <div>
+        <label for="password" class="block text-gray-700">Password</label>
+        <input id="password" formControlName="password" type="password" class="border text-gray-700 p-2 rounded-md w-full" />
+      </div>
+      <div>
+        <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" class="border text-gray-700 p-2 rounded-md w-full" />
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md" [disabled]="signupForm.invalid">Sign Up</button>
+      <div *ngIf="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</div>
+    </form>
+  </div>
+  
