@@ -46,6 +46,13 @@ export class LoginComponent implements OnInit{
     // this.previousUrl = this.navigationService.getPreviousUrl();
   }
 
+  
+  closeForm():void{
+    console.log('Close button clicked !');
+    this.location.back();
+  }
+
+  
   // closeForm(): void {
   //   console.log("Close button clicked!")
   //   const previousUrl = this.navigationService.getPreviousUrl();
@@ -74,9 +81,4 @@ export class LoginComponent implements OnInit{
   //     });
   //   }
   // }
-
-  closeForm():void{
-    console.log('Close button clicked !');
-    this.location.back();
-  }
 }
